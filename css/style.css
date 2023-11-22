@@ -8,6 +8,7 @@
     scroll-behavior: smooth;
     text-decoration: none;
     list-style: none;
+    font-family: 'Work Sans', sans-serif;
     }
     .button{
         background-color: rgba(255, 136, 0, 0.548);
@@ -62,7 +63,7 @@ header nav ul li a {
         color: rgb(255, 255, 255);
         border-radius: 15px;
         padding: .5rem .625rem;
-        transition: ease 0.4s;
+        transition: ease 0.3s;
     }
 header nav ul li a:hover {
         transition: ease 0.3s;
@@ -71,7 +72,8 @@ header nav ul li a:hover {
         padding: .5rem .625rem;
         background-color: rgba(255, 255, 255, 0.719);
     }
-    .indexBody main div:first-of-type{
+
+    .indexBody main > div:first-of-type{
         width: 100%;
         
     }
@@ -82,9 +84,9 @@ header nav ul li a:hover {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        filter: brightness(0.7);
+        filter: brightness(0.6);
     }
-    .indexBody main section:first-of-type{
+    .indexBody main > section:first-of-type{
         height: 80vh;
         width: 100%;
         position: relative;
@@ -118,36 +120,32 @@ header nav ul li a:hover {
         font-weight: 500;
         text-align: start;
     }
-.indexBody main div:nth-of-type(2){
+.indexBody main > div:nth-of-type(2){
     padding-top: 100px;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
-    font-size: 2.5rem;
-    color:rgb(255, 153, 0);
+    font-size: 2rem;
+    color:rgb(255, 60, 0);
 }
-
-
-
-
-
-
-
-
 
     .indexBody main section:nth-of-type(2){
         width: 100%;
-        padding: 3.125rem 3.125rem;
-        padding-top:5.375rem;
+        padding: 5.3rem 3.125rem;
         display: grid;
-        grid-template-columns: repeat(3, 33%);
-        grid-template-rows: repeat(2, 50%);
-        grid-column-gap: 1.25rem;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(2, 300px);
+        grid-column-gap: 10%;
         grid-row-gap: 1.25rem;
-        grid-template-areas: "item1 item2 item3" "item4 item5 item6";
+        grid-template-areas: "item1 item2" "item3 item4";
+        padding-left: 30%;
+        background-image: url(../assets/img/granoss.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
     }
+
     .indexBody main section:nth-of-type(2) div{
-        max-height: 25rem;
-        width: 90%;
+        width: 100%;
         position: relative;
         overflow: hidden;
     }
@@ -176,11 +174,6 @@ header nav ul li a:hover {
         grid-area: item3;}
     .item4 {
         grid-area: item4;}
-    .item5 {
-        grid-area: item5;}
-    .item6 {
-        grid-area: item6;}
-
         .indexBody main section:nth-of-type(2) div .content-details {
             position: absolute;
             text-align: center;
@@ -209,7 +202,72 @@ header nav ul li a:hover {
     .indexBody main section:nth-of-type(2) div .fadeIn {
         top: 80%;
     }
+    .indexBody main section:nth-of-type(3), .indexBody main section:nth-of-type(4){
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color:rgb(255, 60, 0);
+        font-size: 2rem;
+        padding-top: 3rem;
+        gap:2rem;
+    }
+    .indexBody main section:nth-of-type(3) input{
+        border-radius: 20px;
+        border:none;
+        background-color: rgba(210, 105, 30, 0.384);
+        padding:1rem 2rem;
+        color:rgb(214, 131, 7);
+        font-weight: 600;
+    }
 
+    .indexBody main section:nth-of-type(3) img{
+        width: 60%;
+    }
+    .indexBody main section:nth-of-type(4) h4{
+        color: black;
+        text-transform: lowercase;
+        font-size:1rem;
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .indexBody main section:nth-of-type(4){
+        height: 90vh;
+        background-image: url(../assets/img/granoos2.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type button{
+        border-radius: 20px;
+        border:none;
+        padding:1rem 1.7rem;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        animation: transform 0.5s ease;
+        transform: scale(1);
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type button:hover{
+        animation: transform 0.5s ease;
+        transform: scale(1.1);
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type button:first-of-type{
+        background-color: #DAC899 ;
+        color: #716850;
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type button:nth-of-type(2){
+        background-color: #A07156 ;
+        color: #CEB5A7;
+    }
+    .indexBody main section:nth-of-type(4) > section:first-of-type button:nth-of-type(3){
+        background-color: #553A2B ;
+        color: #DAC899;
+    }
 footer{
         width: 100%;
         padding: 30px 0;
@@ -222,34 +280,7 @@ footer p{
         font-size: 16px;
     }
 footer p span a{
-        font-family: "Work Sans", San-Serif;
         font-weight: 600;
         color: rgb(247, 113, 3);
         font-size: 18px;
-        scale: 1.0;
-        transition: ease;
-    }
-
-    /* CARRITO */
-    .carritoBody{
-        width: 100%;
-    }
-    .carritoBody main section:first-of-type>div{
-        display: flex;
-        width: 80%;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        border: 1px solid black;
-        padding:1rem 1rem;
-    }
-    .carritoBody main section:first-of-type div div{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap:.9375rem;
-    }   
-    .carritoBody main section:first-of-type div div img{
-        max-height: 6.25rem;
-        width: auto;
     }
