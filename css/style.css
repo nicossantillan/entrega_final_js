@@ -34,7 +34,7 @@ header{
         flex-wrap: wrap;
         padding: 2.5rem 3.125rem;
         position: relative;
-        z-index: 1;
+        z-index: 3;
     }
 header a h1 {
         font-family: "Saira", sans-serif;
@@ -71,6 +71,9 @@ header nav ul li a:hover {
         border-radius: .9375rem;
         padding: .5rem .625rem;
         background-color: rgba(255, 255, 255, 0.719);
+    }
+    header i{
+        display: none !important; 
     }
 
     .indexBody main > div:first-of-type{
@@ -236,7 +239,7 @@ header nav ul li a:hover {
         gap: 1rem;
     }
     .indexBody main section:nth-of-type(4){
-        height: 90vh;
+        min-height: 90vh;
         background-image: url(../assets/img/granoos2.png);
         background-repeat: no-repeat;
         background-position: right;
@@ -268,6 +271,31 @@ header nav ul li a:hover {
         background-color: #553A2B ;
         color: #DAC899;
     }
+
+    .opcion1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60vh;
+        border-radius: 1.25rem;
+        border: 1px solid black;
+        height: 500px;
+    }
+    .opcion1 img{
+        border-radius: 1.25rem;
+        width: 50%;
+        height: auto;
+    }
+    .opcion1 div{
+        color: black;
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+    .opcion1 div p{
+        text-transform: lowercase;
+        font-size: 1rem;
+    }
 footer{
         width: 100%;
         padding: 30px 0;
@@ -283,4 +311,57 @@ footer p span a{
         font-weight: 600;
         color: rgb(247, 113, 3);
         font-size: 18px;
+    }
+
+    @media (max-width: 800px) {
+        header i{
+            display: block !important;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 4;
+          }
+          header nav li, header nav ul {
+            padding: 1rem;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+          }
+          
+          header nav ul li {
+            transition: transform 0.3s;
+            cursor: pointer;
+          }
+          
+          header nav ul li:hover {
+            transform: translateX(0.3em);
+          }
+          
+          .activo {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+            width: 100%;
+          }
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          .indexBody main section:nth-of-type(2){
+            grid-template-columns: repeat(1, 300px);
+            grid-template-rows: repeat(4, 300px);
+            grid-template-areas: "item1" "item2" "item3" "item4";
+        }
+
     }
