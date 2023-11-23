@@ -169,13 +169,13 @@ header nav ul li a:hover {
         opacity: 1;
         gap:20px;
     }
-    .item1 {
+    .indexBody main section:nth-of-type(2) div:first-of-type {
         grid-area: item1;}
-    .item2 {
-    grid-area: item2;}
-    .item3 {
+    .indexBody main section:nth-of-type(2) div:nth-of-type(2) {
+        grid-area: item2;}
+    .indexBody main section:nth-of-type(2) div:nth-of-type(3) {
         grid-area: item3;}
-    .item4 {
+    .indexBody main section:nth-of-type(2) div:nth-of-type(4) {
         grid-area: item4;}
         .indexBody main section:nth-of-type(2) div .content-details {
             position: absolute;
@@ -279,8 +279,10 @@ header nav ul li a:hover {
         justify-content: center;
         width: 60vh;
         border-radius: 1.25rem;
-        border: 1px solid black;
+        border: 3px solid rgb(255, 136, 0);
         height: 500px;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
     }
     .opcion1 img{
         border-radius: 1.25rem;

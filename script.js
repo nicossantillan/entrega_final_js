@@ -13,11 +13,10 @@ class Granos{
     }
 }
 const granosDeCafe = {
-    willow : new Granos ("Willow", "rubio", "ligero", "fresco y citrico", "alta"),
-    colombia : new Granos ("Colombia", "medio", "ligero", "jugoso y nueces", "alta"),
-    espresso : new Granos ("Espresso", "oscuro", "completo", "vivo y acaramelado", "media"),
-    kenya : new Granos ("Kenya", "medio", "completo", "jugoso y complejo", "alta"),
-    sumatra : new Granos ("Sumatra", "oscuro", "copmleto", "terroso y herbal", "baja"),
+    rwanda : new Granos ("Rwanda", "rubio", "ligero", "fresco y citrico", "alta"),
+    nicaragua : new Granos ("Nicaragua", "oscuro", "completo", "vivo y acaramelado", "media"),
+    guatemala : new Granos ("Guatemala", "medio", "completo", "jugoso y complejo", "alta"),
+    ethiopia : new Granos ("Ethiopia", "oscuro", "completo", "terroso y herbal", "baja"),
     
 };
 
@@ -58,7 +57,7 @@ function MostrarGranos(){
 }
 function verGranos(){
     if (menuPrincipal == 1){
-        mostrarGranos = prompt("Elegir grano a gusto. Ingrese el número correcto: \n1- Willow  \n2- Colombia  \n3- Espresso  \n4- Kenya  \n5- Sumatra\n  \n0- SALIR");
+        mostrarGranos = prompt("Elegir grano a gusto. Ingrese el número correcto: \n1- Rwanda  \n2- Nicaragua  \n3- Guatemala  \n4- Ethiopia  \n0- SALIR");
         MostrarGranos();
         let agregarCafeACarrito;
         if(typeof granoElegido === 'string'){
