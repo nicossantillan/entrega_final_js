@@ -136,11 +136,9 @@ header nav ul li a:hover {
         padding: 5.3rem 3.125rem;
         display: grid;
         grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(2, 300px);
-        grid-column-gap: 10%;
+        grid-column-gap: 1.2rem;
         grid-row-gap: 1.25rem;
-        grid-template-areas: "item1 item2" "item3 item4";
-        padding-left: 30%;
+        padding-left: 35%;
         background-image: url(../assets/img/granoss.png);
         background-repeat: no-repeat;
         background-position: left;
@@ -169,14 +167,6 @@ header nav ul li a:hover {
         opacity: 1;
         gap:20px;
     }
-    .indexBody main section:nth-of-type(2) div:first-of-type {
-        grid-area: item1;}
-    .indexBody main section:nth-of-type(2) div:nth-of-type(2) {
-        grid-area: item2;}
-    .indexBody main section:nth-of-type(2) div:nth-of-type(3) {
-        grid-area: item3;}
-    .indexBody main section:nth-of-type(2) div:nth-of-type(4) {
-        grid-area: item4;}
         .indexBody main section:nth-of-type(2) div .content-details {
             position: absolute;
             text-align: center;

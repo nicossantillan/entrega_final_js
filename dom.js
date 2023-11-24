@@ -18,6 +18,7 @@ const granosDeCafe = {
   nicaragua : new Granos ("Nicaragua", "oscuro", "completo", "vivo y acaramelado", "media", "./assets/img/nicaragua.jpg"),
   guatemala : new Granos ("Guatemala", "medio", "completo", "jugoso y complejo", "alta", "./assets/img/guatemala.jpg"),
   ethiopia : new Granos ("Ethiopia", "oscuro", "completo", "terroso y herbal", "baja", "./assets/img/ethiopia.jpg"),
+  
 };
 
 
@@ -37,84 +38,109 @@ const oscuro = document.getElementById('oscuro');
 const section4 = document.getElementById('section4');
 
 rubio.addEventListener("click", () => {
-  const divPadre = document.createElement("div");
-  divPadre.className = "opcion1";
+  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+  for (const nombreGrano in granosDeCafe) {
+    // Verificar si el nombre del grano coincide con la entrada del usuario
+    if ("rubio" === granosDeCafe[nombreGrano].tostado) {
+      const section4 = document.getElementById("section4");
 
-  const img = document.createElement("img");
-
-  img.setAttribute("src", "./assets/img/rwanda.jpg");
-  img.setAttribute("alt", "Café Rwanda");
-  
-  const divCardBody = document.createElement("div");
-
-  const h3 = document.createElement("h3");
-  h3.innerText = "Café Rwanda";
-
-  const p = document.createElement("p");
-  p.innerHTML = "Hola este es un muy buen cafe par alos amantes del cafe que les gusta y amana tomar cafe todos y cada uno de los dias de su vida!";
-
-  const button = document.createElement("button");
-  button.innerText = "Comprar";
-
-
-  divCardBody.append(h3, p, button);
-  divPadre.append(img, divCardBody);
-  section4.append(divPadre);
-})
+      const divPadre = document.createElement("div");
+      divPadre.className = "opcion1";
+    
+      const img = document.createElement("img");
+    
+      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
+      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
+      
+      const divCardBody = document.createElement("div");
+    
+      const h3 = document.createElement("h3");
+      h3.innerText = granosDeCafe[nombreGrano].nombre;
+    
+      const p = document.createElement("p");
+      p.innerHTML = granosDeCafe[nombreGrano].info;
+    
+      const button = document.createElement("button");
+      button.innerText = "Comprar";
+    
+    
+      divCardBody.append(h3, p, button);
+      divPadre.append(img, divCardBody);
+      section4.append(divPadre);
+    }
+  }
+});
 
 medio.addEventListener("click", () => {
-  const divPadre = document.createElement("div");
-  divPadre.className = "opcion1";
+  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+  for (const nombreGrano in granosDeCafe) {
+    // Verificar si el nombre del grano coincide con la entrada del usuario
+    if ("medio" === granosDeCafe[nombreGrano].tostado) {
+      const section4 = document.getElementById("section4");
 
-  const img = document.createElement("img");
+      const divPadre = document.createElement("div");
+      divPadre.className = "opcion1";
+    
+      const img = document.createElement("img");
+    
+      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
+      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
+      
+      const divCardBody = document.createElement("div");
+    
+      const h3 = document.createElement("h3");
+      h3.innerText = granosDeCafe[nombreGrano].nombre;
+    
+      const p = document.createElement("p");
+      p.innerHTML = granosDeCafe[nombreGrano].info;
+    
+      const button = document.createElement("button");
+      button.innerText = "Comprar";
+    
+    
+      divCardBody.append(h3, p, button);
+      divPadre.append(img, divCardBody);
+      section4.append(divPadre);
 
-  img.setAttribute("src", "./assets/img/nicaragua.jpg");
-  img.setAttribute("alt", "Café Rwanda");
-  
-  const divCardBody = document.createElement("div");
-
-  const h3 = document.createElement("h3");
-  h3.innerText = "Café Nicaragua";
-
-  const p = document.createElement("p");
-  p.innerHTML = "Hola este es un muy buen cafe par alos amantes del cafe que les gusta y amana tomar cafe todos y cada uno de los dias de su vida!";
-
-  const button = document.createElement("button");
-  button.innerText = "Comprar";
-
-
-  divCardBody.append(h3, p, button);
-  divPadre.append(img, divCardBody);
-  section4.append(divPadre);
-})
-
+       // Detener la búsqueda después de encontrar la coincidencia
+    }
+  }
+});
 oscuro.addEventListener("click", () => {
-  const divPadre = document.createElement("div");
-  divPadre.className = "opcion1";
+  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+  for (const nombreGrano in granosDeCafe) {
+    // Verificar si el nombre del grano coincide con la entrada del usuario
+    if ("oscuro" === granosDeCafe[nombreGrano].tostado) {
+      const section4 = document.getElementById("section4");
 
-  const img = document.createElement("img");
+      const divPadre = document.createElement("div");
+      divPadre.className = "opcion1";
+    
+      const img = document.createElement("img");
+    
+      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
+      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
+      
+      const divCardBody = document.createElement("div");
+    
+      const h3 = document.createElement("h3");
+      h3.innerText = granosDeCafe[nombreGrano].nombre;
+    
+      const p = document.createElement("p");
+      p.innerHTML = granosDeCafe[nombreGrano].info;
+    
+      const button = document.createElement("button");
+      button.innerText = "Comprar";
+    
+    
+      divCardBody.append(h3, p, button);
+      divPadre.append(img, divCardBody);
+      section4.append(divPadre);
 
-  img.setAttribute("src", "./assets/img/guatemala.jpg");
-  img.setAttribute("alt", "Café Rwanda");
-  
-  const divCardBody = document.createElement("div");
-
-  const h3 = document.createElement("h3");
-  h3.innerText = "Café Guatemala";
-
-  const p = document.createElement("p");
-  p.innerHTML = "Hola este es un muy buen cafe par alos amantes del cafe que les gusta y amana tomar cafe todos y cada uno de los dias de su vida!";
-
-  const button = document.createElement("button");
-  button.innerText = "Comprar";
-  button.setAttribute("id", "comprar")
-  //AGREGAR EVENTO AL BOTON PARA QUE SE AÑADA EL CAFE AL CARRITO.
-
-
-  divCardBody.append(h3, p, button);
-  divPadre.append(img, divCardBody);
-  section4.append(divPadre);
-})
+       // Detener la búsqueda después de encontrar la coincidencia
+    }
+  }
+});
 
 
 //  VER GRANOS
@@ -186,11 +212,13 @@ botonBusqueda.addEventListener("click", () => {
       divPadre.append(img, divCardBody);
       section3.append(divPadre);
 
-      // console.log("Éxito. Se encontró el grano:", granosDeCafe[nombreGrano].nombre);
       return; // Detener la búsqueda después de encontrar la coincidencia
     }
   }
 
-  // Si llegamos aquí, no se encontró ninguna coincidencia
+  // Si llegamos aca, no se encontró ninguna coincidencia
   console.log("No se encontró ningún grano con el nombre:", input);
 });
+
+
+//AGREGAR A CARRITO 
