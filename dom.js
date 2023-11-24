@@ -118,39 +118,6 @@ oscuro.addEventListener("click", () => {
 
 
 //  VER GRANOS
-// function renderizarProductos(granosDeCafe) {
-
-//   const granosSeleccionados = document.getElementById("granosSeleccionados");
-//   granosSeleccionados.innerHTML = "";
-
-//   for(const producto of granosDeCafe) {
-
-//       // Creamos los elementos dinámicamente
-//       const divPadre = document.createElement("div");
-
-//       const aTag = document.createElement("a");
-//       aTag.setAttribute("href","");
-
-//       const img = document.createElement("img")
-//       img.setAttribute("src", `${granosDeCafe.imagen}` );
-
-//       const divCard = document.createElement("div");
-//       divCard.className = "content-details fadeIn";
-
-//       const h3 = document.createElement("h3");
-//       h3.innerText = granosDeCafe.nombre;
-
-//       const p = document.createElement("p");
-//       p.innerText = granosDeCafe.info;
-
-
-//       // Insertar elementos adentro de otro
-//       divCard.append(h3, p);
-//       divPadre.append(divCard);
-//       granosSeleccionados.append(divPadre);
-//   }
-// }
-// renderizarProductos();
 function renderizarProductos() {
   const granosSeleccionados = document.getElementById("granosSeleccionados");
   granosSeleccionados.innerHTML = "";
@@ -161,9 +128,6 @@ function renderizarProductos() {
 
       // Crear elementos dinámicamente
       const divPadre = document.createElement("div");
-
-      const aTag = document.createElement("a");
-      aTag.setAttribute("href", "");
 
       const img = document.createElement("img");
       img.setAttribute("src", producto.imagen);
@@ -186,3 +150,47 @@ function renderizarProductos() {
 }
 
 renderizarProductos();
+
+//BUSCAR GRANOS
+const botonBusqueda = document.getElementById("botonBusqueda");
+botonBusqueda.addEventListener("click", () => {
+  const input = document.getElementById("barraBusqueda").value;
+
+  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+  for (const nombreGrano in granosDeCafe) {
+    // Verificar si el nombre del grano coincide con la entrada del usuario
+    if (input.toLowerCase() === granosDeCafe[nombreGrano].nombre.toLowerCase()) {
+      const section3 = document.getElementById("section3");
+
+      const divPadre = document.createElement("div");
+      divPadre.className = "opcion1";
+    
+      const img = document.createElement("img");
+    
+      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
+      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
+      
+      const divCardBody = document.createElement("div");
+    
+      const h3 = document.createElement("h3");
+      h3.innerText = granosDeCafe[nombreGrano].nombre;
+    
+      const p = document.createElement("p");
+      p.innerHTML = granosDeCafe[nombreGrano].info;
+    
+      const button = document.createElement("button");
+      button.innerText = "Comprar";
+    
+    
+      divCardBody.append(h3, p, button);
+      divPadre.append(img, divCardBody);
+      section3.append(divPadre);
+
+      // console.log("Éxito. Se encontró el grano:", granosDeCafe[nombreGrano].nombre);
+      return; // Detener la búsqueda después de encontrar la coincidencia
+    }
+  }
+
+  // Si llegamos aquí, no se encontró ninguna coincidencia
+  console.log("No se encontró ningún grano con el nombre:", input);
+});
