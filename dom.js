@@ -1,3 +1,6 @@
+//LOCALE STORAGE Y JSON 
+
+
 // OBJETOS
 class Granos{
   constructor (nombre, tostado, cuerpo, notas, acidez, imagen){
@@ -18,7 +21,6 @@ const granosDeCafe = {
   nicaragua : new Granos ("Nicaragua", "oscuro", "completo", "vivo y acaramelado", "media", "./assets/img/nicaragua.jpg"),
   guatemala : new Granos ("Guatemala", "medio", "completo", "jugoso y complejo", "alta", "./assets/img/guatemala.jpg"),
   ethiopia : new Granos ("Ethiopia", "oscuro", "completo", "terroso y herbal", "baja", "./assets/img/ethiopia.jpg"),
-  
 };
 
 
@@ -42,102 +44,71 @@ rubio.addEventListener("click", () => {
   for (const nombreGrano in granosDeCafe) {
     // Verificar si el nombre del grano coincide con la entrada del usuario
     if ("rubio" === granosDeCafe[nombreGrano].tostado) {
-      const section4 = document.getElementById("section4");
-
-      const divPadre = document.createElement("div");
-      divPadre.className = "opcion1";
-    
-      const img = document.createElement("img");
-    
-      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
-      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
-      
-      const divCardBody = document.createElement("div");
-    
-      const h3 = document.createElement("h3");
-      h3.innerText = granosDeCafe[nombreGrano].nombre;
-    
-      const p = document.createElement("p");
-      p.innerHTML = granosDeCafe[nombreGrano].info;
-    
-      const button = document.createElement("button");
-      button.innerText = "Comprar";
-    
-    
-      divCardBody.append(h3, p, button);
-      divPadre.append(img, divCardBody);
-      section4.append(divPadre);
+      Swal.fire({
+        title: granosDeCafe[nombreGrano].nombre,
+        html: `
+          <img src="${granosDeCafe[nombreGrano].imagen}" alt="${granosDeCafe[nombreGrano].nombre}" style="max-width: 100%;">
+          <p>${granosDeCafe[nombreGrano].info}</p>
+        `,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Comprar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Lógica para procesar la compra si es necesario
+          Swal.fire('Compra realizada!', 'Gracias por tu compra.', 'success');
+        }
+      });
     }
   }
 });
 
 medio.addEventListener("click", () => {
-  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+
   for (const nombreGrano in granosDeCafe) {
-    // Verificar si el nombre del grano coincide con la entrada del usuario
+
     if ("medio" === granosDeCafe[nombreGrano].tostado) {
-      const section4 = document.getElementById("section4");
+      Swal.fire({
+        title: granosDeCafe[nombreGrano].nombre,
+        html: `
+          <img src="${granosDeCafe[nombreGrano].imagen}" alt="${granosDeCafe[nombreGrano].nombre}" style="max-width: 100%;">
+          <p>${granosDeCafe[nombreGrano].info}</p>
+        `,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Comprar',
+      }).then((result) => {
+        if (result.isConfirmed) {
 
-      const divPadre = document.createElement("div");
-      divPadre.className = "opcion1";
-    
-      const img = document.createElement("img");
-    
-      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
-      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
-      
-      const divCardBody = document.createElement("div");
-    
-      const h3 = document.createElement("h3");
-      h3.innerText = granosDeCafe[nombreGrano].nombre;
-    
-      const p = document.createElement("p");
-      p.innerHTML = granosDeCafe[nombreGrano].info;
-    
-      const button = document.createElement("button");
-      button.innerText = "Comprar";
-    
-    
-      divCardBody.append(h3, p, button);
-      divPadre.append(img, divCardBody);
-      section4.append(divPadre);
-
-       // Detener la búsqueda después de encontrar la coincidencia
+          Swal.fire('Compra realizada!', 'Gracias por tu compra.', 'success');
+        }
+      });
     }
   }
 });
 oscuro.addEventListener("click", () => {
-  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
+
   for (const nombreGrano in granosDeCafe) {
-    // Verificar si el nombre del grano coincide con la entrada del usuario
+
     if ("oscuro" === granosDeCafe[nombreGrano].tostado) {
-      const section4 = document.getElementById("section4");
+      Swal.fire({
+        title: granosDeCafe[nombreGrano].nombre,
+        html: `
+          <img src="${granosDeCafe[nombreGrano].imagen}" alt="${granosDeCafe[nombreGrano].nombre}" style="max-width: 100%;">
+          <p>${granosDeCafe[nombreGrano].info}</p>
+        `,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Comprar',
+      }).then((result) => {
+        if (result.isConfirmed) {
 
-      const divPadre = document.createElement("div");
-      divPadre.className = "opcion1";
-    
-      const img = document.createElement("img");
-    
-      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
-      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
-      
-      const divCardBody = document.createElement("div");
-    
-      const h3 = document.createElement("h3");
-      h3.innerText = granosDeCafe[nombreGrano].nombre;
-    
-      const p = document.createElement("p");
-      p.innerHTML = granosDeCafe[nombreGrano].info;
-    
-      const button = document.createElement("button");
-      button.innerText = "Comprar";
-    
-    
-      divCardBody.append(h3, p, button);
-      divPadre.append(img, divCardBody);
-      section4.append(divPadre);
-
-       // Detener la búsqueda después de encontrar la coincidencia
+          Swal.fire('Compra realizada!', 'Gracias por tu compra.', 'success');
+        }
+      });
     }
   }
 });
@@ -178,47 +149,40 @@ function renderizarProductos() {
 renderizarProductos();
 
 //BUSCAR GRANOS
+
 const botonBusqueda = document.getElementById("botonBusqueda");
 botonBusqueda.addEventListener("click", () => {
   const input = document.getElementById("barraBusqueda").value;
+  let granoEncontrado = false;
 
-  // Iterar sobre las claves (nombres de los granos) en granosDeCafe
   for (const nombreGrano in granosDeCafe) {
-    // Verificar si el nombre del grano coincide con la entrada del usuario
     if (input.toLowerCase() === granosDeCafe[nombreGrano].nombre.toLowerCase()) {
-      const section3 = document.getElementById("section3");
-
-      const divPadre = document.createElement("div");
-      divPadre.className = "opcion1";
-    
-      const img = document.createElement("img");
-    
-      img.setAttribute("src", granosDeCafe[nombreGrano].imagen);
-      img.setAttribute("alt", granosDeCafe[nombreGrano].nombre);
-      
-      const divCardBody = document.createElement("div");
-    
-      const h3 = document.createElement("h3");
-      h3.innerText = granosDeCafe[nombreGrano].nombre;
-    
-      const p = document.createElement("p");
-      p.innerHTML = granosDeCafe[nombreGrano].info;
-    
-      const button = document.createElement("button");
-      button.innerText = "Comprar";
-    
-    
-      divCardBody.append(h3, p, button);
-      divPadre.append(img, divCardBody);
-      section3.append(divPadre);
-
-      return; // Detener la búsqueda después de encontrar la coincidencia
+      Swal.fire({
+        title: granosDeCafe[nombreGrano].nombre,
+        html: `
+          <img src="${granosDeCafe[nombreGrano].imagen}" alt="${granosDeCafe[nombreGrano].nombre}" style="max-width: 100%;">
+          <p>${granosDeCafe[nombreGrano].info}</p>
+        `,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Comprar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire('Compra realizada!', 'Gracias por tu compra.', 'success');
+        }
+      });
+      granoEncontrado = true;
+      break; 
     }
   }
 
-  // Si llegamos aca, no se encontró ninguna coincidencia
-  console.log("No se encontró ningún grano con el nombre:", input);
+  if (!granoEncontrado) {
+    Swal.fire({
+      icon: "error",
+      title: "No tenemos ese grano",
+      text: "Prueba con: nicaragua, ethiopia, guatemala, rwanda",
+      footer: '¡Ve a buscar más granos!'
+    });
+  }
 });
-
-
-//AGREGAR A CARRITO 
